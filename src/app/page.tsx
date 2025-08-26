@@ -1,7 +1,9 @@
+import HomeMain from "./dashboard/page";
+
 export default function Home() {
   return (
     <div>
-      <h1>Hola Mundo</h1>
+      <HomeMain />
     </div>
   );
 }
