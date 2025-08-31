@@ -2,11 +2,11 @@
 
 import { useState } from "react";
 import { Bell, User } from "lucide-react";
-import { useHeader } from "@Lib/hooks/useHeaderUsers";
+// import { useHeader } from "@Lib/hooks/useHeaderUsers";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { myPerfil, Settings, Close } = useHeader();
+  // const { myPerfil, Settings, Close } = useHeader();
 
   return (
     <header className="flex items-center bg-gray-900 text-white p-4 w-full z-10">
@@ -30,19 +30,19 @@ const Header = () => {
           {isMenuOpen && (
             <div className="absolute right-0 mt-2 w-48 bg-gray-800 shadow-lg rounded-md py-2">
               <button
-                onClick={myPerfil}
+                // onClick={myPerfil}
                 className="block px-4 py-2 w-full text-left hover:bg-gray-700"
               >
                 Mi Perfil
               </button>
               <button
-                onClick={Settings}
+                // onClick={Settings}
                 className="block px-4 py-2 w-full text-left hover:bg-gray-700"
               >
                 Configuración
               </button>
               <button
-                onClick={Close}
+                // onClick={Close}
                 className="block px-4 py-2 w-full text-left text-red-400 hover:bg-gray-700"
               >
                 Salir

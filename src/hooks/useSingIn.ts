@@ -36,7 +36,7 @@ export function Login() {
         return;
       }
 
-      // Aquí puedes guardar token en localStorage o cookies
+      //Guardar token en localStorage o cookies
       localStorage.setItem("token", data.token);
       console.log("Login exitoso:", data);
     } catch (err) {

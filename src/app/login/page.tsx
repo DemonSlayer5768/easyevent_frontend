@@ -1,8 +1,8 @@
 "use client";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
-import LoginForm from "../../components/singin/SingIn";
-import RegisterForm from "../../components/singin/Register";
+import LoginForm from "../../components/singIn/SingIn";
+import RegisterForm from "../../components/singIn/Register";
 import Aurora from "../../components/ui/Aurora";
 import { useMediaQuery } from "react-responsive";
 

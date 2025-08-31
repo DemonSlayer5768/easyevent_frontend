@@ -1,18 +1,8 @@
 "use client";
 import { useState } from "react";
-import {
-  Menu,
-  Calendar,
-  Package,
-  Mail,
-  MapPinHouse,
-  TableProperties,
-  Settings,
-  HelpCircle,
-  Plus,
-} from "lucide-react";
+import { Menu } from "lucide-react";
+import { useSidebar } from "../../../hooks/useSideBar";
 import Link from "next/link";
-import { useRoutes } from "@Lib/hooks/useRoutes";
 
 interface SidebarItemProps {
   href: string;
@@ -31,8 +21,8 @@ const SidebarItem = ({
     <li>
       <Link
         href={href}
-        className={`flex items-center  gap-2 p-2 rounded-lg hover:bg-gray-600 transition-all duration-300 ease-in-out
-    ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
+        className={`flex items-center gap-2 p-2 rounded-lg hover:bg-gray-600 transition-all duration-300 ease-in-out
+          ${isExpanded ? "w-full justify-start" : "w-12 justify-center"}`}
       >
         <Icon size={24} />
         <div
@@ -49,14 +39,15 @@ const SidebarItem = ({
 
 const Sidebar = () => {
   const [isExpanded, setIsExpanded] = useState(true);
-  const routes = useRoutes();
+  const { mainRoutes, bottomRoutes, loading } = useSidebar();
+
+  if (loading) return <div className="p-4 text-white">Cargando...</div>;
 
   return (
     <div className="flex">
-      {/* Sidebar */}
       <div
         className={`bg-blue-950 text-white min-h-screen flex flex-col transition-all duration-300 ease-in-out
-        ${isExpanded ? "w-64 p-5" : "w-14 p-2"}`}
+          ${isExpanded ? "w-64 p-5" : "w-14 p-2"}`}
       >
         {/* Toggle Button */}
         <div className="mt-4 pb-6">
@@ -68,47 +59,18 @@ const Sidebar = () => {
           </button>
         </div>
 
-        {/* Navigation */}
+        {/* Main Navigation */}
         <nav className="mt-6 flex-1">
           <ul className="space-y-6">
-            <div className="bg-green-500 rounded-lg hover:bg-green-600 transition">
+            {mainRoutes.map((route, index) => (
               <SidebarItem
-                href={routes.crearEvento}
-                icon={Plus}
-                text="Crear Evento"
+                key={index}
+                href={route.href}
+                icon={route.icon}
+                text={route.text}
                 isExpanded={isExpanded}
               />
-            </div>
-            <SidebarItem
-              href={routes.cliente}
-              icon={Calendar}
-              text="Mis Eventos"
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              href={routes.bandejaCorreo}
-              icon={Mail}
-              text="Bandeja"
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              href={routes.paquetesEventos}
-              icon={Package}
-              text="Paquetes"
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              href={routes.catalogoSalonesCliente}
-              icon={MapPinHouse}
-              text="Catalogo Salones"
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              href={routes.serviciosEventosCliente}
-              icon={TableProperties}
-              text="Servicios"
-              isExpanded={isExpanded}
-            />
+            ))}
           </ul>
         </nav>
 
@@ -116,18 +78,15 @@ const Sidebar = () => {
         <div className="mt-auto">
           <hr className="border-gray-700 my-4 mx-2" />
           <ul className="space-y-4">
-            <SidebarItem
-              href="/settings"
-              icon={Settings}
-              text="Settings"
-              isExpanded={isExpanded}
-            />
-            <SidebarItem
-              href="/help"
-              icon={HelpCircle}
-              text="Help"
-              isExpanded={isExpanded}
-            />
+            {bottomRoutes.map((route, index) => (
+              <SidebarItem
+                key={index}
+                href={route.href}
+                icon={route.icon}
+                text={route.text}
+                isExpanded={isExpanded}
+              />
+            ))}
           </ul>
         </div>
       </div>

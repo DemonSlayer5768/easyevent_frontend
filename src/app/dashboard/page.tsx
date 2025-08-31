@@ -3,8 +3,8 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import Header from "../../components/dashboard/header";
 import Footer from "../../components/dashboard/footer";
-import Pricing from "../../components/dashboard/pricingCardsTemplate";
-import Services from "../../components/dashboard/services";
+// import Pricing from "../../components/dashboard/pricingCardsTemplate";
+// import Services from "../../components/dashboard/services";
 import TextHero from "../../components/dashboard/textHero";
 import AboutUs from "../../components/dashboard/aboutUs";
 import ImagenPrincipal from "@/assets/ImagenPrincipal.jpg";
@@ -54,14 +54,14 @@ export default function HomeMain() {
       <div ref={aboutRef}>
         <AboutUs />
       </div>
-
+      {/* 
       <div ref={servicesRef}>
         <Services />
       </div>
 
       <div ref={packagesRef}>
         <Pricing />
-      </div>
+      </div> */}
 
       <Footer />
     </div>

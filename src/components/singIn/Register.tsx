@@ -161,7 +161,7 @@ export default function RegisterForm({
             </button>
           </form>
 
-          <div className="pt-2 text-left ">
+          {/* <div className="pt-2 text-left ">
             <p className="text-sm text-gray-600 flex items-center">
               Crear cuenta como proveedor{" "}
               <input
@@ -172,7 +172,7 @@ export default function RegisterForm({
                 className="ml-2"
               />
             </p>
-          </div>
+          </div> */}
 
           <div className="pt-8 px-8 py-4 text-center">
             <p className="text-sm text-gray-600 ">
