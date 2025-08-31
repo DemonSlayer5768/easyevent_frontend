@@ -2,8 +2,8 @@
 
 import { Eye, EyeOff, Lock, Mail, User, Phone } from "lucide-react";
 import { IoPersonCircle } from "react-icons/io5";
-import { useRegister } from "@Lib/hooks/useRegister";
-import CircularIndeterminate from "@Components/ui/ProgresSpin";
+import { useRegister } from "../../hooks/useRegister";
+import CircularIndeterminate from "../../components/ui/ProgresSpin";
 
 export default function RegisterForm({
   toggleForms,
@@ -23,8 +23,6 @@ export default function RegisterForm({
     setPassword,
     error,
     handleSubmit,
-    typeUser,
-    setTypeUser,
     loading,
   } = useRegister();
 
@@ -169,8 +167,8 @@ export default function RegisterForm({
               <input
                 type="checkbox"
                 id="tipoUsuario"
-                checked={typeUser}
-                onChange={(e) => setTypeUser(e.target.checked)}
+                // checked={typeUser}
+                // onChange={(e) => setTypeUser(e.target.checked)}
                 className="ml-2"
               />
             </p>

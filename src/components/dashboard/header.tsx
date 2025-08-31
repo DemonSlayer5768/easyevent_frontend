@@ -4,7 +4,6 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { IoPersonCircleOutline } from "react-icons/io5";
 import Image from "next/image";
-// import { useRouter } from "next/navigation";
 
 const Header = ({
   scrollToSection,
@@ -15,7 +14,6 @@ const Header = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   // Llamada a useRoutes para obtener el objeto de rutas
-  //   const routes = useRoutes();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -114,8 +112,7 @@ const Header = ({
           </nav>
 
           <div className="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
-            {/* <Link href={routes.login} className="flex items-center gap-2"> */}
-            <Link href="" className="flex items-center gap-2">
+            <Link href="/login" className="flex items-center gap-2">
               <h1 className="flex items-center gap-2  text-center hover:text-blue-600 transition duration-300">
                 Iniciar Sesión
                 <IoPersonCircleOutline className="w-8 h-8" />
@@ -130,8 +127,7 @@ const Header = ({
         <div className="md:hidden w-64  bg-blue-800 text-white shadow-md fixed top-20 right-0 z-50">
           <div className=" px-4 pt-4 pb-2 space-y-3 ">
             <Link
-              // href={routes.login}
-              href=""
+              href="/login"
               onClick={toggleMenu}
               className="flex items-center gap-2 py-2 hover:bg-[#7da0ca] rounded-md transition"
             >

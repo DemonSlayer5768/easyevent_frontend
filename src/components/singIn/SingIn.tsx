@@ -3,8 +3,8 @@
 import type React from "react";
 import { Eye, EyeOff, Lock, Mail } from "lucide-react";
 import { IoPersonCircle } from "react-icons/io5";
-import { useLogin } from "@Lib/hooks/useLogin";
-import CircularIndeterminate from "@Components/ui/ProgresSpin";
+import { Login } from "../../hooks/useSingIn";
+import CircularIndeterminate from "../../components/ui/ProgresSpin";
 
 export default function LoginForm({
   toggleForms,
@@ -21,7 +21,7 @@ export default function LoginForm({
     togglePassword,
     handleSubmit,
     loading,
-  } = useLogin();
+  } = Login();
 
   return (
     <div className="flex min-h-screen items-center justify-center">
